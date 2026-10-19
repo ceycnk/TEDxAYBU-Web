@@ -100,6 +100,8 @@ This repository is sanitized in accordance with data privacy best practices (KVK
 
 ---
 
-## 📄 License
+## 📄 Copyright & Rights
 
-This project is licensed under the MIT License.
+Copyright © 2026 TEDxAYBU. All rights reserved.
+
+This repository and its source code are published solely for portfolio demonstration and educational evaluation purposes. Unauthorized copying, modification, redistribution, or deployment of this software is strictly prohibited without prior written permission.
