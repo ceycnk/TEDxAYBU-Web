@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* =============================================
+   CSS CUSTOM PROPERTIES — Tema Renk Sistemi
+   ============================================= */
+:root {
+  /* Light Theme */
+  --bg-primary:   #faf8f5;
+  --bg-secondary: #f0ede8;
+  --bg-card:      #ffffff;
+  --bg-card-alt:  #f5f2ed;
+  --bg-navbar:    rgba(250, 248, 245, 0.85);
+  --bg-footer:    #e8e5e0;
+
+  --text-primary:   #18181b;
+  --text-secondary: #52525b;
+  --text-muted:     #a1a1aa;
+
+  --border-color:   rgba(0, 0, 0, 0.1);
+  --border-subtle:  rgba(0, 0, 0, 0.06);
+
+  --shadow-card:  0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.06);
+  --shadow-lg:    0 10px 40px rgba(0,0,0,0.1);
+}
+
+html.dark {
+  /* Dark Theme — simsiyah TED stili */
+  --bg-primary:   #000000;
+  --bg-secondary: #0d0d0d;
+  --bg-card:      #111111;
+  --bg-card-alt:  #1a1a1a;
+  --bg-navbar:    rgba(0, 0, 0, 0.92);
+  --bg-footer:    #0d0d0d;
+
+  --text-primary:   #ffffff;
+  --text-secondary: #a1a1aa;
+  --text-muted:     #71717a;
+
+  --border-color:   rgba(255, 255, 255, 0.1);
+  --border-subtle:  rgba(255, 255, 255, 0.05);
+
+  --shadow-card:  0 1px 3px rgba(0,0,0,0.4), 0 1px 2px rgba(0,0,0,0.3);
+  --shadow-lg:    0 10px 40px rgba(0,0,0,0.6);
+}
+
+/* =============================================
+   BASE STYLES
+   ============================================= */
+html {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: 'Inter', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* =============================================
+   UTILITY CLASSES (tema uyumlu)
+   ============================================= */
+.theme-bg-primary   { background-color: var(--bg-primary); }
+.theme-bg-secondary { background-color: var(--bg-secondary); }
+.theme-bg-card      { background-color: var(--bg-card); }
+.theme-bg-card-alt  { background-color: var(--bg-card-alt); }
+.theme-bg-navbar    { background-color: var(--bg-navbar); }
+.theme-bg-footer    { background-color: var(--bg-footer); }
+
+.theme-text         { color: var(--text-primary); }
+.theme-text-muted   { color: var(--text-secondary); }
+.theme-text-subtle  { color: var(--text-muted); }
+
+.theme-border       { border-color: var(--border-color); }
+.theme-border-subtle{ border-color: var(--border-subtle); }
+
+/* Geçiş efektleri */
+.theme-transition {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
