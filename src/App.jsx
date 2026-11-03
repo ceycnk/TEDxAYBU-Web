@@ -9,6 +9,7 @@ import Sponsors from './pages/Sponsors';
 import Team from './pages/Team';
 import Performers from './pages/Performers';
 import SpecialEvent from './pages/SpecialEvent';
+import JoinTeam from './pages/JoinTeam';
 import RegisterTicket from './pages/RegisterTicket';
 import GateScanner from './pages/GateScanner';
 import AdminDashboard from './pages/AdminDashboard';
@@ -23,6 +24,8 @@ function App() {
                 <Layout>
                     <Routes>
                         <Route path="/" element={<Home />} />
+                        <Route path="/ekibe-katil" element={<JoinTeam />} />
+                        <Route path="/basvuru" element={<JoinTeam />} />
                         <Route path="/bilet-al" element={<RegisterTicket />} />
                         <Route path="/kayit" element={<RegisterTicket />} />
                         <Route path="/admin" element={<GateScanner />} />

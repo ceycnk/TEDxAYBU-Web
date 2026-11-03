@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ArrowRight, ChevronDown, Calendar, Clock, Sparkles, Palette, Video, Globe, Handshake, Compass, Users } from 'lucide-react';
+import { ArrowRight, ChevronDown, Calendar, Clock } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Home = () => {
@@ -14,11 +14,11 @@ const Home = () => {
         },
         {
             question: "TEDxAYBU 2027 için yeni ekip arkadaşı arıyor musunuz?",
-            answer: "Evet! 2027 yılında gerçekleştireceğimiz yeni TEDx etkinliğimiz için hazırlıklarımıza başladık. Tasarımdan sosyal medyaya, web teknolojilerinden sponsorluğa kadar farklı ekiplerimize katılmak için başvuru formumuzu doldurabilirsiniz."
+            answer: "Evet! 2027 yılında gerçekleştireceğimiz yeni TEDx etkinliğimiz için hazırlıklarımıza başladık. Tasarımdan sosyal medyaya, web teknolojilerinden sponsorluğa kadar farklı ekiplerimize katılmak için 'Ekibe Katıl' sayfamızdan başvuru formuna ulaşabilirsiniz."
         },
         {
             question: "Ekip başvuruları kimlere açık ve nasıl başvurabilirim?",
-            answer: "Ankara Yıldırım Beyazıt Üniversitesi'nde öğrenim gören, fikirlerin gücüne inanan ve organizasyon tecrübesi kazanmak isteyen tüm öğrencilere açıktır. Sayfamızdaki 'Ekibe Katıl' butonuna tıklayarak başvuru formuna ulaşabilirsiniz."
+            answer: "Ankara Yıldırım Beyazıt Üniversitesi'nde öğrenim gören, fikirlerin gücüne inanan ve organizasyon tecrübesi kazanmak isteyen tüm öğrencilere açıktır. Menüdeki 'Ekibe Katıl' butonuna tıklayarak departman detaylarını inceleyebilir ve başvuru formunu doldurabilirsiniz."
         },
         {
             question: "Geçmiş etkinlik konuşmalarını ve sanatçılarını nereden görebilirim?",
@@ -35,11 +35,10 @@ const Home = () => {
                     <span className="text-white text-sm font-bold tracking-wide">
                         🚀 TEDxAYBU 2026 Başarıyla Gerçekleşti! Şimdi 2027 İçin Yeni Ekip Arkadaşları Arıyoruz.
                     </span>
-                    <a href="https://docs.google.com/forms/d/e/1FAIpQLScy_pVonbMhop7qkPSMmpVovdsigvofkfjZpganrqsGG-BI7g/viewform?usp=dialog"
-                        target="_blank" rel="noopener noreferrer"
+                    <Link to="/ekibe-katil"
                         className="text-white underline text-sm font-bold hover:opacity-80 transition-opacity whitespace-nowrap">
-                        Ekibe Katıl / Başvuru Formu →
-                    </a>
+                        Detayları İncele & Ekibe Katıl →
+                    </Link>
                 </div>
             </div>
 
@@ -89,16 +88,14 @@ const Home = () => {
 
                     {/* Aksiyon Butonları */}
                     <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-2 w-full px-4">
-                        <a 
-                            href="https://docs.google.com/forms/d/e/1FAIpQLScy_pVonbMhop7qkPSMmpVovdsigvofkfjZpganrqsGG-BI7g/viewform?usp=dialog"
-                            target="_blank" 
-                            rel="noopener noreferrer"
+                        <Link 
+                            to="/ekibe-katil"
                             className="w-full sm:w-auto group relative inline-flex items-center justify-center px-8 py-4 font-bold text-white bg-ted-red hover:bg-black hover:text-white transition-all rounded-xl shadow-lg hover:shadow-red-500/25"
                         >
                             <span className="relative z-10 flex items-center gap-2">
                                 ✨ 2027 Ekip Başvurusu Yap <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                             </span>
-                        </a>
+                        </Link>
                         <Link to="/speakers"
                             style={{ color: 'var(--text-primary)', border: '2px solid var(--border-color)' }}
                             className="w-full sm:w-auto group inline-flex items-center justify-center px-8 py-4 font-bold hover:border-ted-red transition-all bg-transparent theme-transition rounded-xl">
@@ -117,104 +114,8 @@ const Home = () => {
                 </div>
             </section>
 
-            {/* ── 2027 Yeni Ekip Arkadaşları Arıyoruz Bölümü ── */}
-            <section id="ekibe-katil" style={{ backgroundColor: 'var(--bg-secondary)', borderTop: '1px solid var(--border-subtle)', borderBottom: '1px solid var(--border-subtle)' }}
-                className="py-24 relative overflow-hidden theme-transition">
-                <div className="absolute top-0 right-1/4 w-96 h-96 bg-ted-red/10 rounded-full blur-[140px] pointer-events-none"></div>
-                <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-ted-red/5 rounded-full blur-[140px] pointer-events-none"></div>
-
-                <div className="container mx-auto px-4 relative z-10">
-                    <div className="max-w-4xl mx-auto text-center mb-16">
-                        <div className="inline-flex items-center gap-2 mb-4 px-4 py-1.5 border border-ted-red/40 rounded-full bg-ted-red/10 text-ted-red font-mono text-xs sm:text-sm tracking-widest uppercase font-bold">
-                            <Sparkles className="w-4 h-4" />
-                            TEDxAYBU 2027 Hazırlıkları
-                        </div>
-                        <h2 style={{ color: 'var(--text-primary)' }} className="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-6 tracking-tight uppercase theme-transition">
-                            Yeni Ekip Arkadaşları <span className="text-ted-red">Arıyoruz!</span>
-                        </h2>
-                        <div className="w-24 h-1.5 bg-ted-red mx-auto mb-8"></div>
-                        <p style={{ color: 'var(--text-secondary)' }} className="text-lg sm:text-xl font-light leading-relaxed theme-transition">
-                            2026 yılı sahnemizi başarıyla tamamladık; şimdi <strong>TEDxAYBU 2027</strong> için çok daha büyük, ilham verici ve etkileyici bir organizasyonu birlikte inşa etme vakti! Büyük fikirleri sahneye taşımak ve perde arkasındaki bu eşsiz yolculuğa ortak olmak istiyorsan ekibimize katıl.
-                        </p>
-                    </div>
-
-                    {/* Departman Kartları Grid */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto mb-16">
-                        {[
-                            {
-                                icon: Palette,
-                                title: "Tasarım & Kreatif",
-                                desc: "Afişler, sahne dekoru, yaka kartları ve sosyal medya görsel kimliğini tasarlayacak yaratıcı zihinler."
-                            },
-                            {
-                                icon: Video,
-                                title: "Sosyal Medya & İçerik",
-                                desc: "Reels ve video kurguları, aylık yayın takvimi, hikâye anlatımı ve dijital etkileşim yönetimi."
-                            },
-                            {
-                                icon: Globe,
-                                title: "Web & Teknoloji",
-                                desc: "Web platformunun geliştirilmesi, dijital biletleme sistemi, QR operasyonları ve teknik altyapı."
-                            },
-                            {
-                                icon: Handshake,
-                                title: "Sponsorluk & Ortaklıklar",
-                                desc: "Marka ve kurum görüşmeleri, kurumsal sponsorluk dosyalarının hazırlanması ve partnerlik yönetimi."
-                            },
-                            {
-                                icon: Compass,
-                                title: "Operasyon & Etkinlik Akışı",
-                                desc: "Etkinlik günü salon akışı, fuaye ve stant koordinasyonu, misafir karşılama ve sahne arkası operasyonları."
-                            },
-                            {
-                                icon: Users,
-                                title: "Küratörlük & Konuşmacı",
-                                desc: "Yeni fikir araştırmaları, konuşmacı iletişimi, konuşma koçluğu ve sahne içeriklerinin olgunlaştırılması."
-                            }
-                        ].map(({ icon: Icon, title, desc }, idx) => (
-                            <div key={idx}
-                                style={{ backgroundColor: 'var(--bg-card)', border: '1px solid var(--border-color)' }}
-                                className="p-7 rounded-2xl shadow-sm hover:border-ted-red/40 hover:-translate-y-1 transition-all duration-300 group flex flex-col justify-between theme-transition">
-                                <div>
-                                    <div className="w-12 h-12 rounded-xl bg-ted-red/10 border border-ted-red/20 flex items-center justify-center mb-5 group-hover:bg-ted-red group-hover:text-white transition-colors text-ted-red">
-                                        <Icon className="w-6 h-6 transition-colors" />
-                                    </div>
-                                    <h3 style={{ color: 'var(--text-primary)' }} className="text-xl font-bold mb-2.5 theme-transition">
-                                        {title}
-                                    </h3>
-                                    <p style={{ color: 'var(--text-secondary)' }} className="text-sm leading-relaxed theme-transition">
-                                        {desc}
-                                    </p>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-
-                    {/* CTA Çağrı Kutusu */}
-                    <div style={{ backgroundColor: 'var(--bg-card)', border: '1px solid var(--border-color)' }}
-                        className="max-w-4xl mx-auto p-8 sm:p-12 rounded-3xl text-center shadow-xl relative overflow-hidden theme-transition">
-                        <div className="absolute top-0 right-0 w-48 h-48 bg-ted-red/10 rounded-full blur-2xl"></div>
-                        <h3 style={{ color: 'var(--text-primary)' }} className="text-2xl sm:text-3xl font-extrabold mb-4 theme-transition">
-                            Hazır mısın? Birlikte İlham Verelim!
-                        </h3>
-                        <p style={{ color: 'var(--text-secondary)' }} className="text-base sm:text-lg max-w-2xl mx-auto mb-8 theme-transition">
-                            Başvuru formundaki soruları yanıtlayarak yeteneklerini ve ilgi duyduğun departmanı bizimle paylaş. TEDxAYBU 2027 ailesinde yerini al!
-                        </p>
-                        <a
-                            href="https://docs.google.com/forms/d/e/1FAIpQLScy_pVonbMhop7qkPSMmpVovdsigvofkfjZpganrqsGG-BI7g/viewform?usp=dialog"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-flex items-center gap-2.5 px-9 py-4 bg-ted-red hover:bg-black text-white font-bold rounded-2xl transition-all shadow-xl hover:shadow-red-500/25 text-base sm:text-lg"
-                        >
-                            <span>Ekip Başvuru Formunu Doldur</span>
-                            <ArrowRight className="w-5 h-5" />
-                        </a>
-                    </div>
-                </div>
-            </section>
-
             {/* ── Tema Açıklaması ── */}
-            <section style={{ backgroundColor: 'var(--bg-primary)', borderTop: '1px solid var(--border-subtle)', borderBottom: '1px solid var(--border-subtle)' }}
+            <section style={{ backgroundColor: 'var(--bg-secondary)', borderTop: '1px solid var(--border-subtle)', borderBottom: '1px solid var(--border-subtle)' }}
                 className="py-24 relative overflow-hidden theme-transition">
                 <div className="absolute top-0 right-0 w-64 h-64 bg-ted-red/5 rounded-full blur-[100px]"></div>
                 <div className="container mx-auto px-4 relative z-10">
@@ -263,8 +164,8 @@ const Home = () => {
                 </div>
             </section>
 
-            {/* ── Program ── */}
-            <section style={{ backgroundColor: 'var(--bg-secondary)', borderTop: '1px solid var(--border-subtle)', borderBottom: '1px solid var(--border-subtle)' }}
+            {/* ── 2026 Etkinlik Programı ve Akışı ── */}
+            <section style={{ backgroundColor: 'var(--bg-primary)', borderTop: '1px solid var(--border-subtle)', borderBottom: '1px solid var(--border-subtle)' }}
                 className="py-24 theme-transition">
                 <div className="container mx-auto px-4">
                     <div className="text-center mb-16">
@@ -342,7 +243,7 @@ const Home = () => {
             </section>
 
             {/* ── SSS ── */}
-            <section style={{ backgroundColor: 'var(--bg-primary)' }} className="py-24 theme-transition">
+            <section style={{ backgroundColor: 'var(--bg-secondary)' }} className="py-24 theme-transition">
                 <div className="container mx-auto px-4">
                     <div className="text-center mb-16">
                         <h2 style={{ color: 'var(--text-primary)' }} className="text-4xl md:text-5xl font-bold mb-6 uppercase tracking-tight theme-transition">Sık Sorulan Sorular</h2>

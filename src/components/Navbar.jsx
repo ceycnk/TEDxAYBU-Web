@@ -12,12 +12,7 @@ const Navbar = () => {
         { name: 'Anasayfa', path: '/' },
         { name: 'Konuşmacılar', path: '/speakers' },
         { name: 'Sahne Sanatçıları', path: '/performers' },
-        { 
-            name: 'Ekibe Katıl', 
-            href: 'https://docs.google.com/forms/d/e/1FAIpQLScy_pVonbMhop7qkPSMmpVovdsigvofkfjZpganrqsGG-BI7g/viewform?usp=dialog', 
-            isExternal: true, 
-            isButton: true 
-        },
+        { name: 'Ekibe Katıl', path: '/ekibe-katil', isButton: true },
         { name: 'Kurallar', path: '/kurallar' },
         { name: 'Hakkımızda', path: '/about' },
         { name: 'Ekibimiz', path: '/team' },
@@ -81,15 +76,15 @@ const Navbar = () => {
                                         <Link
                                             key={link.name}
                                             to={link.path}
-                                            className="transition-all duration-300 px-3.5 py-1.5 text-xs xl:text-sm font-bold uppercase tracking-widest text-white rounded-full hover:opacity-90 shadow-sm"
+                                            className="transition-all duration-300 px-3.5 py-1.5 text-xs xl:text-sm font-bold uppercase tracking-widest text-white rounded-full hover:opacity-90 shadow-sm inline-flex items-center gap-1"
                                             style={{
                                                 backgroundColor: '#EB0028',
                                                 border: '1px solid #EB0028',
                                                 opacity: isActive ? 1 : 0.95,
-                                                boxShadow: isActive ? '0 0 12px rgba(235, 0, 40, 0.4)' : 'none',
+                                                boxShadow: isActive ? '0 0 14px rgba(235, 0, 40, 0.5)' : 'none',
                                             }}
                                         >
-                                            {link.special ? `✨ ${link.name}` : link.name}
+                                            ✨ {link.name}
                                         </Link>
                                     );
                                 }
@@ -182,7 +177,7 @@ const Navbar = () => {
                                         className="block px-4 py-3 mx-2 my-1 rounded-xl text-base font-bold uppercase tracking-widest text-center shadow-md transition-opacity hover:opacity-90"
                                         onClick={handleLinkClick}
                                     >
-                                        {link.special ? `✨ ${link.name}` : link.name}
+                                        ✨ {link.name}
                                     </Link>
                                 );
                             }

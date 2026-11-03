@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { ArrowRight, Sparkles } from 'lucide-react';
 
 const Team = () => {
@@ -119,15 +120,13 @@ const Team = () => {
                     <p style={{ color: 'var(--text-secondary)' }} className="text-base sm:text-lg max-w-2xl mx-auto mb-8 theme-transition">
                         TEDxAYBU 2027 için yeni ekip arkadaşlarımızı arıyoruz! Fikirlerin sahnede parlamasını sağlayan perde arkasındaki bu eşsiz yolculuğa sen de katıl.
                     </p>
-                    <a
-                        href="https://docs.google.com/forms/d/e/1FAIpQLScy_pVonbMhop7qkPSMmpVovdsigvofkfjZpganrqsGG-BI7g/viewform?usp=dialog"
-                        target="_blank"
-                        rel="noopener noreferrer"
+                    <Link
+                        to="/ekibe-katil"
                         className="inline-flex items-center gap-2.5 px-8 py-4 bg-ted-red hover:bg-black text-white font-bold rounded-2xl transition-all shadow-lg hover:shadow-red-500/20 text-base"
                     >
-                        <span>Ekip Başvuru Formunu Doldur</span>
+                        <span>Ekip Başvuru Detaylarını Gör</span>
                         <ArrowRight className="w-5 h-5" />
-                    </a>
+                    </Link>
                 </div>
             </div>
         </div>
