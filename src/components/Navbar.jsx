@@ -10,10 +10,14 @@ const Navbar = () => {
 
     const links = [
         { name: 'Anasayfa', path: '/' },
-        { name: 'Bilet Al', path: '/bilet-al', isButton: true },
         { name: 'Konuşmacılar', path: '/speakers' },
         { name: 'Sahne Sanatçıları', path: '/performers' },
-        { name: 'Özel Etkinlik', path: '/ozel-etkinlik' },
+        { 
+            name: 'Ekibe Katıl', 
+            href: 'https://docs.google.com/forms/d/e/1FAIpQLScy_pVonbMhop7qkPSMmpVovdsigvofkfjZpganrqsGG-BI7g/viewform?usp=dialog', 
+            isExternal: true, 
+            isButton: true 
+        },
         { name: 'Kurallar', path: '/kurallar' },
         { name: 'Hakkımızda', path: '/about' },
         { name: 'Ekibimiz', path: '/team' },
@@ -54,6 +58,24 @@ const Navbar = () => {
                         <nav className="flex items-center space-x-3 xl:space-x-4">
                             {links.map((link) => {
                                 const isActive = location.pathname === link.path;
+                                if (link.isExternal) {
+                                    return (
+                                        <a
+                                            key={link.name}
+                                            href={link.href}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="transition-all duration-300 px-3.5 py-1.5 text-xs xl:text-sm font-bold uppercase tracking-widest text-white rounded-full hover:opacity-90 shadow-sm inline-flex items-center gap-1.5"
+                                            style={{
+                                                backgroundColor: '#EB0028',
+                                                border: '1px solid #EB0028',
+                                                boxShadow: '0 0 12px rgba(235, 0, 40, 0.4)',
+                                            }}
+                                        >
+                                            ✨ {link.name}
+                                        </a>
+                                    );
+                                }
                                 if (link.special || link.isButton) {
                                     return (
                                         <Link
@@ -130,6 +152,24 @@ const Navbar = () => {
                     <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
                         {links.map((link) => {
                             const isActive = location.pathname === link.path;
+                            if (link.isExternal) {
+                                return (
+                                    <a
+                                        key={link.name}
+                                        href={link.href}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        style={{
+                                            backgroundColor: '#EB0028',
+                                            color: '#ffffff',
+                                        }}
+                                        className="block px-4 py-3 mx-2 my-1 rounded-xl text-base font-bold uppercase tracking-widest text-center shadow-md transition-opacity hover:opacity-90"
+                                        onClick={handleLinkClick}
+                                    >
+                                        ✨ {link.name}
+                                    </a>
+                                );
+                            }
                             if (link.isButton || link.special) {
                                 return (
                                     <Link

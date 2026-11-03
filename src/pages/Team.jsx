@@ -1,4 +1,5 @@
 import React from 'react';
+import { ArrowRight, Sparkles } from 'lucide-react';
 
 const Team = () => {
     const teamMembers = [
@@ -98,6 +99,35 @@ const Team = () => {
                             </div>
                         </div>
                     ))}
+                </div>
+            </div>
+
+            {/* ── 2027 Ekip Başvurusu Çağrı Alanı ── */}
+            <div className="container mx-auto px-4 pb-24">
+                <div 
+                    style={{ backgroundColor: 'var(--bg-card)', border: '1px solid var(--border-color)' }}
+                    className="max-w-4xl mx-auto p-8 sm:p-12 rounded-3xl text-center shadow-xl relative overflow-hidden theme-transition"
+                >
+                    <div className="absolute top-0 right-0 w-64 h-64 bg-ted-red/10 rounded-full blur-3xl pointer-events-none"></div>
+                    <div className="inline-flex items-center gap-2 mb-4 px-4 py-1.5 border border-ted-red/40 rounded-full bg-ted-red/10 text-ted-red font-mono text-xs sm:text-sm tracking-widest uppercase font-bold">
+                        <Sparkles className="w-4 h-4" />
+                        TEDxAYBU 2027 Dönemi
+                    </div>
+                    <h2 style={{ color: 'var(--text-primary)' }} className="text-3xl sm:text-4xl font-extrabold mb-4 theme-transition">
+                        Sen de Bu Ekibin Bir Parçası Olmak İster misin?
+                    </h2>
+                    <p style={{ color: 'var(--text-secondary)' }} className="text-base sm:text-lg max-w-2xl mx-auto mb-8 theme-transition">
+                        TEDxAYBU 2027 için yeni ekip arkadaşlarımızı arıyoruz! Fikirlerin sahnede parlamasını sağlayan perde arkasındaki bu eşsiz yolculuğa sen de katıl.
+                    </p>
+                    <a
+                        href="https://docs.google.com/forms/d/e/1FAIpQLScy_pVonbMhop7qkPSMmpVovdsigvofkfjZpganrqsGG-BI7g/viewform?usp=dialog"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2.5 px-8 py-4 bg-ted-red hover:bg-black text-white font-bold rounded-2xl transition-all shadow-lg hover:shadow-red-500/20 text-base"
+                    >
+                        <span>Ekip Başvuru Formunu Doldur</span>
+                        <ArrowRight className="w-5 h-5" />
+                    </a>
                 </div>
             </div>
         </div>
